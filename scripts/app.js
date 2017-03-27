@@ -1,4 +1,4 @@
-var todoApp = angular.module('todoApp', ['todoApp.filters', 'todoApp.filters2', 'ngRoute'])
+var todoApp = angular.module('todoApp', ['todoApp.filters', 'ngRoute'])
 
 todoApp.config(function($locationProvider, $routeProvider) {
     $locationProvider.hashPrefix('');

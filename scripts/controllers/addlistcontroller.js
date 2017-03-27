@@ -3,6 +3,8 @@ todoApp.controller("addlistController", function ($scope) {
   $scope.saveNewItem = function() {
     console.log($scope.newItem);
 
+    if($scope.addListForm.$valid) {
+
     $scope.notes.push({
       id: $scope.notes.length + 1,
       checked: false,
@@ -40,5 +42,8 @@ todoApp.controller("addlistController", function ($scope) {
     //localStorage.setItem("priorities", JSON.stringify($scope.priorities));
     localStorage.setItem("comment", JSON.stringify($scope.comment));
   };
+
+  return true
+}
 
 });

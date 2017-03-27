@@ -12,28 +12,6 @@
     <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <style type="text/css">
-    .Red {
-        color: #ff0000;
-    }
-
-    .Blue {
-        color: #6600ff;
-    }
-
-    .Green {
-        color: #00ff00;
-    }
-
-    div::first-letter {
-    font-size: large;
-    font-weight: bold;
-    font-style: italic;
-    }
-
-
-    </style>
-
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script> 
     <!--
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
@@ -106,7 +84,7 @@
    <!-- <a href="" ng-repeat="note in notes | filter: filters track by $index" ng-click="filters.category = getCategoryByNote(note)">{{getCategoryByNote(note)}}</a>
     test
        <br>-->
-    <h1>Home page</h1>
+    <h1>home page</h1>
 
     <div class="input-group">
         <input type="text" class="form-control" placeholder="Search for..." ng-model="searchTerm">
@@ -137,7 +115,7 @@
             <!-- | unique: 'category'-->
                <td>{{note.id}}</td>
                 <td>
-                    <span ng-hide="note.updating"><div id="test">{{note.name | hoofdletterFilter}}</div></span>
+                    <span ng-hide="note.updating">{{note.name | hoofdletterFilter}}</span>
                     <input type="text" ng-model="note.name" ng-show="note.updating">
                 </td>
                 <td>

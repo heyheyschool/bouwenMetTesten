@@ -11,13 +11,13 @@ describe("Filters: hoofdletterFilter en boldFilter", function() {
 	});
 
 	it("should make the first letter capitalized", function() {
-		var input = "hallo";
+		var input = "hAllo";
 		var output = "Hallo";
 
 		expect(filter(input)).toBe(output);
 	});
 
-	var filter2;
+	/*var filter2;
 	beforeEach(function(){
 		module("todoApp.filters2"); 
 
@@ -25,15 +25,6 @@ describe("Filters: hoofdletterFilter en boldFilter", function() {
 			filter2 = $filter('boldFilter');
 
 		});
-	});
-
-
-	/*it("should execute with success", function() {
-		expect(true).toBeTruthy();
-	});
-
-	it("should not execute with succes", function(){
-		expect(true).not.toBe(false);
 	});*/
 
 });

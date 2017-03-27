@@ -1,8 +1,8 @@
-#container{
+body{
     font-family: 'Hind', sans-serif;
 }
 
- /* The side navigation menu */
+/* The side navigation menu */
 .sidenav {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
@@ -76,4 +76,57 @@ button{
     background-color: transparent ;
 }
 
-/* */
+.Red {
+    color: #ff0000;
+}
+
+.Blue {
+    color: #6600ff;
+}
+
+.Green {
+    color: #00ff00;
+}
+
+/*.first-letter {
+    font-size: large;
+    font-weight: bold;
+    font-style: italic;
+}*/
+
+input.ng-invalid {
+    background-color:pink;
+}
+    
+input.ng-valid {
+    background-color:lightgreen;
+}
+
+.menu-bar{
+    width: 100%;
+    background-color: red;
+    padding: 20px;
+}
+
+.search{
+    width: 200px;
+    position: absolute;
+    top: 20px;
+    right: 20%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    color: black;
+}

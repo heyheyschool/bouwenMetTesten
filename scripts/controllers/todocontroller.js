@@ -15,6 +15,7 @@ todoApp.controller('todoController', function($scope) {
         deleteIndex = i;
         commentIndex = commentIndex + note.wid;  
         categoryIndex = categoryIndex + note.cid;
+        
         /*console.log(note.wid);
         console.log(commentIndex);*/
       }
@@ -33,14 +34,20 @@ todoApp.controller('todoController', function($scope) {
     var test = -1;
     commentId = test + note.wid; 
     categoryId = test + note.cid;
+
+    console.log("note" + note);
     console.log("comm value" + comment);
     console.log("category value" + category);
-    $scope.categories.splice(categoryId, 1, {"id": note.cid, "name": category})
-    $scope.comment.splice(commentId, 1, {"id": note.wid, "note": comment})
+
+    $scope.categories.splice(categoryId, 1, {"id": note.cid, "name": category});
+    $scope.comment.splice(commentId, 1, {"id": note.wid, "note": comment});
+
     //console.log("splice " + $scope.comment.splice(test, 1, {"id": note.wid, "note": comm}));;
     console.log($scope.comment[0], $scope.comment[1], $scope.comment[2]);
    // $scope.comment[test].push({"id": "0", "note": "BLABLA"})
     //console.log($scope.comment.splice(1, test, "id": note.wid "note": comm));
+
+    console.log($scope.notes[0], $scope.comment[0], $scope.categories[0]);
 
     localStorage.setItem("notes", JSON.stringify($scope.notes));
     localStorage.setItem("comment", JSON.stringify($scope.comment));
@@ -52,11 +59,11 @@ todoApp.controller('todoController', function($scope) {
   $scope.filters = {};
 
 
-  $scope.notes = [{}];
-  $scope.categories = [{}];
-  $scope.comment = [{}];
+  //$scope.notes = [{}];
+  //$scope.categories = [{}];
+  //$scope.comment = [{}];
 
- /*$scope.notes = [{
+ $scope.notes = [{
         "id": "1",
         checked: false,
         "name": "Lezen",
@@ -82,7 +89,7 @@ todoApp.controller('todoController', function($scope) {
         "id": "2",
         "name": "Werk",
         //"pid": "2",
-    }]; */
+    }]; 
 
     $scope.priorities = [{
         "id": "1",
@@ -100,7 +107,7 @@ todoApp.controller('todoController', function($scope) {
 
     console.log($scope.priorities);
 
-    /* $scope.comment = [{
+     $scope.comment = [{
         "id": "1",
         "note": "Architectuur boek",
       }, {
@@ -109,7 +116,7 @@ todoApp.controller('todoController', function($scope) {
       }, {
         "id": "3",
         "note": "Test",
-    }];*/
+    }];
 
 
   var localCategories = JSON.parse(localStorage.getItem("categories"));

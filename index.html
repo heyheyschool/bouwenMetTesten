@@ -14,21 +14,6 @@
     <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <style type="text/css">
-    .Red {
-        color: #ff0000;
-    }
-
-    .Blue {
-        color: #6600ff;
-    }
-
-    .Green {
-        color: #00ff00;
-    }
-
-    </style>
-
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script> 
     <!--
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
@@ -47,7 +32,7 @@
   </head>
 
   <body ng-app="todoApp" ng-controller="todoController">
-        <nav>
+        <div class="menu-bar"><nav>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="material-icons">close</i></a>
             <ul>
@@ -55,22 +40,30 @@
 
                 <li class="second"><a href="#/addlist">Voeg note toe</a></li>
                 
-                <li class="third"><a href="#/contact">Third</a></li>
+                <li class="third"><a href="#/info">Informatie</a></li>
             </ul>
-            <a href="#" ng-repeat="note in notes |filter: filters track by $index  " ng-click="filters.category = getCategoryByNote(note)">{{getCategoryByNote(note)}}</a>
-        </div>
         </nav>
         <!-- Use any element to open the sidenav -->
 
       <span onclick="openNav()" ng-click="uniqueItems()"><i class="material-icons">menu</i></span>
+      <div class="search"><div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for..." ng-model="searchTerm">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div> 
+      </div>
+    </div>
     <div class="listDiv">
-    <button ng-click="test()">HALLO</button>
 
-<a href="#home">Home</a>
+    <br><br/>
 
-<a href="#addlist">Voeg note toe</a>
-                
-<a href="#categories">Categoriën</a>
+    <!--<select ng-model="orderProp" ng-click="filters.category = getCategoryByNote(note)" ng-options="note in notes | getCategoryByNote(note) | filter: filters track by $index">
+    <option value="0">Default</option>
+    // unique options from the categories
+    </select> -->
 
 <!-- test 
         <ul>
