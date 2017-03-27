@@ -63,15 +63,16 @@
         <br>
       </div> 
       <button type="button" class="btn btn-danger">Reset</button>
-      <button type="submit" class="btn btn-primary" ng-click="saveNewItem()" ng-model="newItem">Save</button>
+      <button type="submit" id ="submitButton" class="btn btn-primary" ng-click="saveNewItem()" ng-model="newItem">Save</button>
     </form>
     </table>
 
     <table>
       <tr ng-repeat="note in notes |orderBy : 'name'">
-    <td>{{note.name}}</td>
-    <td>{{note.id}}</td>
-    <td>{{getCategoryByNote(note)}}</td>
+    <td id="name">{{note.name}}</td>
+    <td id="category">{{getCategoryByNote(note)}}</td>
+    <td id="comment">{{getCommentByNote(note)}}</td>
+    <td id="priority">{{getPriorityByNote(note)}}</td>
     <!-- Currency name here -->
   </tr>
   </table>
