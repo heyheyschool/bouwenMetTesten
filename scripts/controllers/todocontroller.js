@@ -2,10 +2,6 @@ todoApp.controller('todoController', function($scope) {
 
   $scope.deleteItem = function(note) {
 
-    //var index = $scope.notes.indexOf(note);
-    //$scope.notes.splice(index, 1); 
-
-    //localStorage.setItem("notes", JSON.stringify($scope.notes));
     var deleteIndex = -1; 
     var note;
     var commentIndex = -1;
@@ -15,9 +11,6 @@ todoApp.controller('todoController', function($scope) {
         deleteIndex = i;
         commentIndex = commentIndex + note.wid;  
         categoryIndex = categoryIndex + note.cid;
-        
-        /*console.log(note.wid);
-        console.log(commentIndex);*/
       }
     });
 
@@ -44,7 +37,7 @@ todoApp.controller('todoController', function($scope) {
 
     //console.log("splice " + $scope.comment.splice(test, 1, {"id": note.wid, "note": comm}));;
     console.log($scope.comment[0], $scope.comment[1], $scope.comment[2]);
-   // $scope.comment[test].push({"id": "0", "note": "BLABLA"})
+    // $scope.comment[test].push({"id": "0", "note": "BLABLA"})
     //console.log($scope.comment.splice(1, test, "id": note.wid "note": comm));
 
     console.log($scope.notes[0], $scope.comment[0], $scope.categories[0]);
@@ -53,112 +46,12 @@ todoApp.controller('todoController', function($scope) {
     localStorage.setItem("comment", JSON.stringify($scope.comment));
     localStorage.setItem("categories", JSON.stringify($scope.categories));
   };
-
-  $scope.category = {};
-  
-  $scope.filters = {};
-
-
-  //$scope.notes = [{}];
-  //$scope.categories = [{}];
-  //$scope.comment = [{}];
-
- $scope.notes = [{
-        "id": "1",
-        checked: false,
-        "name": "Lezen",
-        "wid": "1",
-        "cid": "2",
-        "pid": "1",
-    }, {
-        "id": "2",
-        checked: false,
-        "name": "Studeren",
-        "wid": "2",
-        "cid": "1",
-        "pid": "2",
-    }];
-
-     console.log($scope.notes);
     
-    $scope.categories = [{
-        "id": "1",
-        "name": "School",
-        //"pid": "1",
-    }, {
-        "id": "2",
-        "name": "Werk",
-        //"pid": "2",
-    }]; 
+  $scope.categories = [{}];
+  $scope.notes = [{}];
+  $scope.prorities = [{}];
+  $scope.comment = [{}];
 
-    $scope.priorities = [{
-        "id": "1",
-        "name": "High",
-        "color": "red",
-    }, {
-        "id": "2",
-        "name": "Medium",
-        "color": "blue",
-    }, {
-        "id": "3",
-        "name": "Low",
-        "color": "green",
-    }];
-
-    console.log($scope.priorities);
-
-     $scope.comment = [{
-        "id": "1",
-        "note": "Architectuur boek",
-      }, {
-        "id": "2",
-        "note": "SPA afmaken",
-      }, {
-        "id": "3",
-        "note": "Test",
-    }];
-
-
-  var localCategories = JSON.parse(localStorage.getItem("categories"));
-  var localComments = JSON.parse(localStorage.getItem("comment"));
-  var localNotes = JSON.parse(localStorage.getItem("notes"));
-  var localPriorities = JSON.parse(localStorage.getItem("priorities"));
-
-  console.log("before"+localCategories);
-  console.log("before"+localComments);
-  console.log("before"+localNotes);
-  console.log("before prio"+localPriorities);
-
-  //Ik overschrijf de array en moet hem toevoegen.
-
-  if(localCategories != undefined && localCategories.length>0) {
-
-    $scope.categories = $scope.categories.concat(localCategories);
-    console.log($scope.categories);
-  }
-
-  if(localComments != undefined && localComments.length>0) {
-    $scope.comment = $scope.comment.concat(localComments);
-    console.log($scope.comment);
-  }
-
-  if(localNotes != undefined && localNotes.length>0) {
-    $scope.notes = $scope.notes.concat(localNotes);
-    console.log($scope.notes);
-  }
-
-  if(localPriorities != undefined && localPriorities.length>0) {
-
-    $scope.priorities = localPriorities;
-    console.log($scope.priorities);
-  }
-
-//-----
-
-//id van ander object meegeven in notes  
-
-
-    
     $scope.getCategoryByNote = function(note){
         var categories = "";
         angular.forEach($scope.categories, function(value, key) {
@@ -168,7 +61,7 @@ todoApp.controller('todoController', function($scope) {
             }
         });
         return categories;
-}
+    }
 
     $scope.getColorByNote = function(note){
         var colors = "";

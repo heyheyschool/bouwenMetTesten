@@ -35,13 +35,22 @@
         "note": "Architectuur boek",
     }];
 
-    todocontroller.deleteItem(notes);
+    it('notes should be null', function(){
+		todocontroller.deleteItem(notes);
+		expect(notes).toBeNull();
+    });
+    //todocontroller.deleteItem(notes);
 
-    expect(notes).toBeNull();  
+    //expect(notes).toBeNull();  
 
     console.log(notes);
 
-    //expect(todocontroller(notes).toBe(categories));
+    it('TEST', function(){
+		expect(todocontroller(notes).toBe(categories));
+    });
+   
+
+    //it('')
 	
 	});
 

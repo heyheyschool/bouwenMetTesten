@@ -1,5 +1,6 @@
 todoApp.controller("HomeController", function($scope, DataFactory) {
     $scope.data = DataFactory.getAllData();
+    $scope.categories = DataFactory.getAllCategories();
 });
 
     todoApp.factory('DataFactory', function() {
@@ -9,12 +10,25 @@ todoApp.controller("HomeController", function($scope, DataFactory) {
     	"Op deze pagina zie je afbeeldingen"
     ];
 
+    var categories = [{
+        "id": "1",
+        "name": "School",
+    }, {
+        "id": "2",
+        "name": "Werk",
+    }];
+
     function getAllData() {
         return data;
     }
 
+    function getAllCategories(){
+        return categories; 
+    }
+
     return {
-        getAllData: getAllData
+        getAllData: getAllData,
+        getAllCategories: getAllCategories
     };
 
 });
