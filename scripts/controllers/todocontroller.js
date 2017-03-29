@@ -1,4 +1,4 @@
-todoApp.controller('todoController', function($scope) {
+todoApp.controller('todoController', function($scope, DataFactory) {
 
   $scope.deleteItem = function(note) {
 
@@ -51,6 +51,145 @@ todoApp.controller('todoController', function($scope) {
   $scope.notes = [{}];
   $scope.prorities = [{}];
   $scope.comment = [{}];
+
+   /*  $scope.notes = [{
+        "id": "1",
+        checked: false,
+        "name": "Lezen",
+        "wid": "1",
+        "cid": "2",
+        "pid": "1",
+    }, {
+        "id": "2",
+        checked: false,
+        "name": "Studeren",
+        "wid": "2",
+        "cid": "1",
+        "pid": "2",
+    }];
+
+     console.log($scope.notes);*/
+    
+    /*$scope.categories = [{
+        "id": "1",
+        "name": "School",
+        //"pid": "1",
+    }, {
+        "id": "2",
+        "name": "Werk",
+        //"pid": "2",
+    }]; */
+
+    /*$scope.priorities = [{
+        "id": "1",
+        "name": "High",
+        "color": "red",
+    }, {
+        "id": "2",
+        "name": "Medium",
+        "color": "blue",
+    }, {
+        "id": "3",
+        "name": "Low",
+        "color": "green",
+    }];
+
+    console.log($scope.priorities);
+
+     $scope.comment = [{
+        "id": "1",
+        "note": "Architectuur boek",
+      }, {
+        "id": "2",
+        "note": "SPA afmaken",
+      }, {
+        "id": "3",
+        "note": "Test",
+    }];*/
+
+
+  /*var localCategories = JSON.parse(localStorage.getItem("categories"));
+  var localComments = JSON.parse(localStorage.getItem("comment"));
+  var localNotes = JSON.parse(localStorage.getItem("notes"));
+  var localPriorities = JSON.parse(localStorage.getItem("priorities"));
+
+  console.log("before"+localCategories);
+  console.log("before"+localComments);
+  console.log("before"+localNotes);
+  console.log("before prio"+localPriorities);
+
+  //Ik overschrijf de array en moet hem toevoegen.
+
+  if(localCategories != undefined && localCategories.length>0) {
+    $scope.categories = DataFactory.getAllCategories();
+    console.log("factory"+$scope.categories);
+    $scope.categories = $scope.categories.concat(localCategories);
+    console.log($scope.categories);
+  }
+
+  if(localComments != undefined && localComments.length>0) {
+    $scope.comment = DataFactory.getAllComments();
+    console.log("factory"+$scope.comment);
+    $scope.comment = $scope.comment.concat(localComments);
+    console.log($scope.comment);
+  }
+
+  if(localNotes != undefined && localNotes.length>0) {
+    $scope.notes = DataFactory.getAllNotes();
+    console.log("factory"+$scope.notes);
+    $scope.notes = $scope.notes.concat(localNotes);
+    console.log($scope.notes);
+  }
+
+  if(localPriorities != undefined && localPriorities.length>0) {
+    $scope.priorities = DataFactory.getAllPriorities();
+    console.log("factory"+$scope.priorities);
+    $scope.priorities = localPriorities;
+    console.log($scope.priorities);
+}*/
+
+    /*var localCategories = localStorage.getItem("categories");
+    var localComments = localStorage.getItem("comment");
+    var localNotes = localStorage.getItem("notes");
+    var localPriorities = localStorage.getItem("priorities");
+
+    console.log("before"+localCategories);
+    console.log("before"+localComments);
+    console.log("before"+localNotes);
+    console.log("before prio"+localPriorities);
+
+    //Ik overschrijf de array en moet hem toevoegen.
+
+    if(localCategories != undefined && localCategories.length>0) {
+
+      //$scope.categories = $scope.categories.concat(localCategories);
+      $scope.categories = JSON.parse(localCategories);
+      console.log($scope.categories);
+    }else{
+      $scope.categories = DataFactory.getAllCategories();
+    }
+
+    if(localComments != undefined && localComments.length>0) {
+      $scope.comment = JSON.parse(localComments);
+      console.log($scope.comment);
+    }else{
+      $scope.comment = DataFactory.getAllComments();
+    }
+
+    if(localNotes != undefined && localNotes.length>0) {
+      $scope.notes = JSON.parse(localNotes);
+      console.log($scope.notes);
+    }else{
+        $scope.notes = DataFactory.getAllNotes();
+  }
+
+    if(localPriorities != undefined && localPriorities.length>0) {
+
+      $scope.priorities = JSON.parse(localPriorities);
+      console.log($scope.priorities);
+    }else{
+      $scope.priorities = DataFactory.getAllPriorities();
+}*/
 
     $scope.getCategoryByNote = function(note){
         var categories = "";

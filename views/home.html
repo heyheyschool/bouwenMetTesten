@@ -86,7 +86,7 @@
        <br>-->
     <h1>home page</h1>
 
-    <div class="input-group">
+    <div class="search"><div class="input-group">
         <input type="text" class="form-control" placeholder="Search for..." ng-model="searchTerm">
         <span class="input-group-btn">
           <button class="btn btn-default" type="button">
@@ -94,6 +94,7 @@
           </button>
         </span>
       </div> 
+      </div>
 
     <br><br/>
 
@@ -102,7 +103,7 @@
     // unique options from the categories
     </select> -->
 
-    <table class="table">
+    <table class="table" ng-controller="localStorageController">
         <thead>
             <tr>
                 <th>Item</th><th>Category</th><th>Status</th><th>Priority</th><th>Comment</th>
@@ -142,7 +143,6 @@
                     <button type="button" class="btn btn-success" ng-click="updateItem(note, commentValue, categoryValue)" ng-show="note.updating">Save</button>
 
                     <button type="button" class="btn btn-warning" ng-click="note.updating=true;" ng-hide="note.updating">Update</button>
-
                     <button type="button" class="btn btn-danger" ng-click="deleteItem(note)">Delete</button>
                 </td>
                 </div>
