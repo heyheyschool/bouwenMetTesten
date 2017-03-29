@@ -31,15 +31,5 @@ describe("Filters: hoofdletterFilter en boldFilter", function() {
 		expect(filter(input)).toBe(output);
 	});
 
-	/*var filter2;
-	beforeEach(function(){
-		module("todoApp.filters2"); 
-
-		inject(function($filter){
-			filter2 = $filter('boldFilter');
-
-		});
-	});*/
-
 });
 
