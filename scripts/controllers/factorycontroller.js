@@ -18,6 +18,47 @@ todoApp.controller("HomeController", function($scope, DataFactory) {
         "name": "Werk",
     }];
 
+    var notes = [{
+        "id": "1",
+        checked: false,
+        "name": "Lezen",
+        "wid": "1",
+        "cid": "2",
+        "pid": "1",
+    }, {
+        "id": "2",
+        checked: false,
+        "name": "Studeren",
+        "wid": "2",
+        "cid": "1",
+        "pid": "2",
+    }];
+
+    var priorities = [{
+        "id": "1",
+        "name": "High",
+        "color": "red",
+    }, {
+        "id": "2",
+        "name": "Medium",
+        "color": "blue",
+    }, {
+        "id": "3",
+        "name": "Low",
+        "color": "green",
+    }];
+
+    var comment = [{
+        "id": "1",
+        "note": "Architectuur boek",
+      }, {
+        "id": "2",
+        "note": "SPA afmaken",
+      }, {
+        "id": "3",
+        "note": "Test",
+    }];
+
     function getAllData() {
         return data;
     }
@@ -26,9 +67,24 @@ todoApp.controller("HomeController", function($scope, DataFactory) {
         return categories; 
     }
 
+    function getAllNotes(){
+        return notes;
+    }
+
+    function getAllPriorities(){
+        return priorities;
+    }
+
+    function getAllComments(){
+        return comment;
+    }
+
     return {
         getAllData: getAllData,
-        getAllCategories: getAllCategories
+        getAllCategories: getAllCategories,
+        getAllNotes: getAllNotes,
+        getAllPriorities: getAllPriorities,
+        getAllComments: getAllComments
     };
 
 });

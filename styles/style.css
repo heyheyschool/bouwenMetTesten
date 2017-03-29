@@ -52,14 +52,14 @@ body{
     .sidenav a {font-size: 18px;}
 }
 
-li{
+/*li{
     list-style-type: none;
 }
 
 ul{
     -webkit-padding-start: 0;
     list-style-type: none;
-}
+}*/
 
 .listDiv{
     width: 80%;
@@ -94,13 +94,13 @@ button{
     font-style: italic;
 }*/
 
-input.ng-invalid {
+/*input.ng-invalid {
     background-color:pink;
 }
     
 input.ng-valid {
     background-color:lightgreen;
-}
+}*/
 
 .menu-bar{
     width: 100%;
@@ -111,8 +111,8 @@ input.ng-valid {
 .search{
     width: 200px;
     position: absolute;
-    top: 20px;
-    right: 20%;
+    top: 7px;
+    right: 30%;
 }
 
 table {
@@ -129,4 +129,29 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 th {
     color: black;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
 }
