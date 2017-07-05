@@ -8,7 +8,7 @@ describe('E2E: tController', function() {
 
         var h1 = element(by.tagName('h1'));
         var h1Text = h1.getText();
-        expect(h1Text).toBe("Home page");
+        expect(h1Text).toBe("home page");
     });
 
 });

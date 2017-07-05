@@ -8,37 +8,70 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>  
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
   </head>
 
   <body ng-app="todoApp" ng-controller="addlistController">
+  
+    <form name="addListForm" ng-submit="saveNewItem()" novalidate>
 
- <table>
-      <form name="addListForm">
-      <div class="form-group">
-        <tr><input type="text" class="form-control" id="nameInput" placeholder="name ..." ng-model="newItem.name"></tr>
-      </div>
-       <tr><input type="text" class="form-control" id="categoryInput" placeholder="category name ..." ng-model="newItem.name2"></tr>
-      </div>
-      <tr><input type="text" class="form-control" id="commentInput" placeholder="comment ..." ng-model="newItem.comment"></tr>
-      </div>
-        <tr>
-        <br>
-        <tr>
-        <select id="priorityInput" ng-model="newItem.priority">
+       
+        <div class="form-group" ng-class="{ 'has-error' : addListForm.name.$invalid && !addListForm.name.$pristine }">
+            <label>Name</label>
+            <input type="text" name="name" class="form-control" ng-model="newItem.name" required>
+            <p ng-show="addListForm.name.$invalid && addListForm.name.$touched" class="help-block">Your name is required.</p>
+        </div>
+        
+        
+        <div class="form-group" ng-class="{ 'has-error' : addListForm.name2.$invalid && !addListForm.name2.$pristine }">
+            <label>Category</label>
+            <input type="text" name="name2" class="form-control" ng-model="newItem.name2" required="">
+            <p ng-show="addListForm.name2.$invalid && addListForm.name2.$touched" class="help-block">The category is required</p>
+        </div>
+
+        
+        <div class="form-group" ng-class="{ 'has-error' : addListForm.comment.$invalid && !addListForm.comment.$pristine }">
+            <label>Name</label>
+            <input type="text" name="comment" class="form-control" ng-model="newItem.comment" required>
+            <p ng-show="addListForm.comment.$invalid && addListForm.comment.$touched" class="help-block">The comment is required.</p>
+        </div>
+        
+
+        <div class="form-group" ng-class="{ 'has-error' : addListForm.priority.$invalid">
+        <label>Priority</label>
+        <select id="priorityInput" name="priority" ng-model="newItem.priority" required>
             <option value="High">High</option>
             <option value="Medium">Medium</option>
             <option value="Low">Low</option>
         </select>
-        </tr>
+        <p ng-show="addListForm.priority.$invalid && !addListForm.priority.$pristine" class="help-block">The priority is required.</p>
         <br>
       </div> 
-      <button type="submit" id ="submitButton" class="btn btn-primary" ng-click="saveNewItem()" ng-model="newItem">Save</button>
+      <div ng-repeat="note in notes |orderBy : 'name' track by $index">
+    {{note.name}}
+    {{getCategoryByNote(note)}}
+    {{getCommentByNote(note)}}
+    {{getPriorityByNote(note)}}
+    </div>
+
+        <button type="submit" class="btn btn-primary" ng-disabled="addListForm.$invalid">Submit</button>
+        
+    </form> 
+
+        
+
+      <!--<button type="submit" id="submitButton" class="btn btn-primary" ng-model="newItem" ng-disabled="addListForm.$invalid">Save</button>-->
+      <!--ng-submit="saveNewItem()"-->
     </form>
     </table>
-
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="filters.js"></script>
+
+    <div ng-app="todoApp" ng-controller="addlistController">
+<div class="container">
+<div class="row">  
+   
+<div class="col-sm-6">
   </body>
 </html>
