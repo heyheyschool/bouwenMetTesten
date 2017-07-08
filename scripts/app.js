@@ -16,7 +16,7 @@ todoApp.config(function($locationProvider, $routeProvider) {
         controller: "HomeController"
     })
     .otherwise({
-        redirectTo: 'home.html',
+        redirectTo: '/home',
     });
 });
 

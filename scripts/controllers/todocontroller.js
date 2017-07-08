@@ -121,6 +121,5 @@ todoApp.controller('todoController', function($scope, DataFactory) {
         });
         return comment;
     }
-
 });
  

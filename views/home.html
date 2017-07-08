@@ -11,6 +11,8 @@
     
     <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script> 
           
@@ -33,21 +35,22 @@
 
     <br><br/>
 
+    <div class="menubar">
     <table class="table">
         <thead>
             <tr>
-                <th>Item</th><th>Category</th><th>Status</th><th>Priority</th><th>Comment</th>
+                <th>Item</th><th>Titel</th><th>Categorie</th><th>Prioriteit</th><th>Notitie</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="note in notes | filter: checked=false | filter: searchTerm track by $index">
-               <td>{{note.id}}</td>
+               <!--<td>{{note.id}}</td>-->
                 <td>
                     <span ng-hide="note.updating">{{note.name | hoofdletterFilter}}</span>
                     <input type="text" ng-model="note.name" ng-show="note.updating">
                 </td>
                 <td>
-                    <span ng-hide="note.updating">{{getCategoryByNote(note)}}</span>
+                    <span ng-hide="note.updating">{{getCategoryByNote(note) | uppercase}}</span>
                     <input type="text" ng-value="getCategoryByNote(note)" ng-model="categoryValue" ng-show="note.updating"> 
                 </td>
                 <td>
@@ -75,6 +78,7 @@
 
         </tbody>
     </table> 
+    </div>
     <script type="text/javascript" src="app.js"></script>
      <script type="text/javascript" src="scripts/filters/filters.js"></script>
     
