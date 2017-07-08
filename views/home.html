@@ -9,10 +9,8 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="script.js"></script>  
     
-    <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Capriola|Catamaran|Fira+Sans+Condensed|Russo+One|Sura|Hind" rel="stylesheet">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script> 
           
@@ -21,7 +19,7 @@
 
   <body ng-app="todoApp" ng-controller="todoController">
    
-    <h1>home page</h1>
+    <div class="maintitle">Alle notities</div>
 
     <div class="search"><div class="input-group">
         <input type="text" class="form-control" placeholder="Search for..." ng-model="searchTerm">
@@ -35,9 +33,10 @@
 
     <br><br/>
 
-    <div class="menubar">
+    <div class="notes">
     <table class="table">
         <thead>
+            <tr>TODO</tr>
             <tr>
                 <th>Item</th><th>Titel</th><th>Categorie</th><th>Prioriteit</th><th>Notitie</th>
             </tr>
@@ -72,6 +71,30 @@
 
                     <button type="button" class="btn btn-warning" ng-click="note.updating=true;" ng-hide="note.updating">Update</button>
                     <button type="button" class="btn btn-danger" ng-click="deleteItem(note)">Delete</button>
+                </td>
+                </div>
+            </tr>
+
+        </tbody>
+    </table> 
+
+    <table class="table">
+        <thead>
+            <tr>Done</tr>
+        </thead>
+        <tbody class="strikethrough">
+            <tr ng-repeat="note in notes | filter: checked=true | filter: searchTerm track by $index">
+                <td>
+                    {{note.name | hoofdletterFilter}}
+                </td>
+                <td>
+                    {{getCategoryByNote(note) | uppercase}}
+                </td>
+                <td>
+                    {{getPriorityByNote(note)}}
+                </td>
+                <td>
+                    {{getCommentByNote(note)}}</div>
                 </td>
                 </div>
             </tr>

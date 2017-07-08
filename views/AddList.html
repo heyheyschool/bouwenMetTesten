@@ -15,7 +15,6 @@
   <body ng-app="todoApp" ng-controller="addlistController">
   
     <form name="addListForm" ng-submit="saveNewItem()" novalidate>
-
        
         <div class="form-group" ng-class="{ 'has-error' : addListForm.name.$invalid && !addListForm.name.$pristine }">
             <label>Name</label>
@@ -32,7 +31,7 @@
 
         
         <div class="form-group" ng-class="{ 'has-error' : addListForm.comment.$invalid && !addListForm.comment.$pristine }">
-            <label>Name</label>
+            <label>Comment</label>
             <input type="text" name="comment" class="form-control" ng-model="newItem.comment" required>
             <p ng-show="addListForm.comment.$invalid && addListForm.comment.$touched" class="help-block">The comment is required.</p>
         </div>
@@ -58,7 +57,6 @@
         <button type="submit" class="btn btn-primary" ng-disabled="addListForm.$invalid">Submit</button>
         
     </form> 
-
         
 
       <!--<button type="submit" id="submitButton" class="btn btn-primary" ng-model="newItem" ng-disabled="addListForm.$invalid">Save</button>-->
